@@ -5,4 +5,4 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ## Start project:
 
-Downlaod this repositorie > enter the "ml-app" > execute this command ``` npm start ```, this project run in localhost:3000
+Downlaod this repositorie > enter in "ml-app" > execute this command ``` npm start ```, this project run in localhost:3000
