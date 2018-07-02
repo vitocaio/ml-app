@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter } from 'react-router-dom'
 
 class SearchBar extends Component {
   constructor(props) {
     super(props)
 
-    this.state = {
-      redirect: false
-    }
+      this.state = {
+        redirect: false
+      }
   }
 
   render() {
+    const { redirect } = this.state
+
     return (
       <div className="col-11">
         <div className="input-group thin-bar">
@@ -27,35 +29,37 @@ class SearchBar extends Component {
               </button>
             </span>
           </div>
-          {
-            this.state.redirect &&
-            <Redirect push to={this.state.redirect} />
+          { redirect && 
+              <Redirect push to={{ search:  this.state.redirect }}/>
           }
         </div>
       </div>
     )
   }
 
-  handleKeyPress(event) {
-    if(event.key === 'Enter') {
+  handleKeyPress(e) {
+    if(e.key === 'Enter') {
       this.search(this.refs.searchInput.value)
-      this.refs.searchInput.value = ''
     }
   }
 
-  handleOnClick() {
+  handleOnClick(e) {
     this.search(this.refs.searchInput.value)
   }
 
-  search(query) {
-    if(query === '') {
+  search(value) {
+    if(value === '') {
       return
     }
 
-    return this.setState({
-      redirect: '/​items?search=' + query
-    })
+    window.location = '/​items?search=' + value // Não é a solução ideial para as rotas, precisa de melhorias
+    
+    // return this.setState({
+    //   redirect: '/​items?search=' + value
+    // })
+
+    this.props.history.push('/​items?search=' + value)
   }
 }
 
-export default SearchBar
+export default withRouter(SearchBar)

@@ -67,7 +67,8 @@ class Details extends Component {
                 <aside className="col-4">
                     <p>{this.state.product.title}</p>
                     <h4>{this.state.product.title}</h4>
-                    <p><span>
+                    <h1>
+                      <span>
                         {
                         this.state.product.price.toLocaleString('pt-BR', 
                             { 
@@ -75,7 +76,8 @@ class Details extends Component {
                             currency: 'USD' 
                             })
                         }
-                        </span></p>
+                        </span>
+                    </h1>
                     <button className="btn btn-primary btn-lg btn-block">Comprar</button>
                 </aside>            
             </div>
@@ -113,7 +115,7 @@ class Details extends Component {
 
     serviceApi.getProductDescription(id)
       .then((data) => {
-        console.log(data) 
+        //console.log(data) 
         if(data === undefined) {
           this.setState({
             isLoading: false,

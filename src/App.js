@@ -12,6 +12,7 @@ import Details from './components/products/details/details'
 import logo from './img/MercadoLivre.png'
 
 class App extends Component {
+
   render() {
     return (
       <Router>
@@ -30,7 +31,7 @@ class App extends Component {
           </nav>
           <div className="container products">
             <Route exact path="/items/:id" component={ Details } />
-            <Route path="/​items" component={ List } />
+            <Route exact path="/​items" component={ List } />
           </div>
         </div>
       </Router>
