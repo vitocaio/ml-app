@@ -12,7 +12,15 @@ class ListItem extends Component {
                 </div>
                 <div className="col-6">
                     <div className="product-description">
-                        <h3>$ {this.props.product.price}</h3>
+                        <h3> 
+                        {
+                            this.props.product.price.toLocaleString('pt-BR', 
+                            { 
+                            style: 'currency',
+                            currency: 'USD' 
+                            })
+                        }
+                        </h3>
                         <p>{this.props.product.title}</p>
                     </div>
                 </div>
