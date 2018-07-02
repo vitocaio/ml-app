@@ -12,17 +12,21 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="col-12">
-        <div className="input-group search-bar">
+      <div className="col-11">
+        <div className="input-group thin-bar">
           <input ref="searchInput" type="text" className="form-control" placeholder="Nunca deixe de buscar"
             onKeyPress={ (e) => this.handleKeyPress(e) }>
           </input>
-          <span className="input-group-btn">
-            <button className="btn btn-default" type="button"
-              onClick={ () => this.handleOnClick() }>
-              <span className="glyphicon glyphicon-search" aria-hidden="true"></span>
-            </button>
-          </span>
+          <div className="input-group-prepend">
+            <span className="input-group-text" id="basic-addon1">
+              <button className="btn btn-default transparent" type="button"
+                onClick={ () => this.handleOnClick() }>
+                <span className="glyphicon glyphicon-search" aria-hidden="true">
+                  <i className="fa fa-search"></i>
+                </span>
+              </button>
+            </span>
+          </div>
           {
             this.state.redirect &&
             <Redirect push to={this.state.redirect} />

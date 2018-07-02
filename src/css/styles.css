@@ -1,0 +1,90 @@
+/* cores padrão do site */ 
+.amarelo-ml {
+    background-color: #ffdb15;
+}
+
+body {
+    background-color: #e6e6e6;
+}
+
+.ml-logo {
+    height: 50px;
+}
+
+.navbar {
+    padding: inherit;
+}
+
+/* para objetos clicáveis na tela */
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    opacity: 0.7;
+}
+
+/* === NAVBAR === */
+.navbar-brand {
+    padding-top: 4px;
+}
+
+.search-bar {
+    margin-top: 6px;
+}
+
+/* fix para imagem responsiva do bootstrap */
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+.transparent {
+    background-color: transparent !important;
+}
+
+.thin-bar {
+    height: 40px;
+}
+
+.products {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.product-image {
+    padding: 10px;
+}
+
+.product-description {
+    margin-top: 20px;
+}
+
+.product-description p{
+    margin-top: 20px;
+}
+
+.product-state {
+    margin-top: 20px;
+    padding: 40px;
+    padding-right: 80px;
+}
+
+.product-state p {
+   font-size: 13px;
+}
+
+.panel {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.description-product-detail {
+    margin-top: 50px;
+}
+
+.description-product-detail p{
+    margin-top: 20px;
+    color: #999999
+}

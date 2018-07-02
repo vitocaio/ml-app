@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
+import ListItem from './listItem'
 import { Redirect } from 'react-router-dom'
-import listItem from './listItem'
 
 import serviceApi from '../../../services/api/api'
 
@@ -34,9 +34,7 @@ class List extends Component {
           <li><p>Carregando, aguarde...</p></li>
         }
         {
-          !this.state.isLoading && 
-          this.state.status !== undefined &&
-          this.state.results.slice(0,4).map(this.renderProduct)
+          !this.state.isLoading && this.state.status !== undefined && this.state.results.slice(0,4).map(this.renderProduct)
         }
       </ul>  
     )
@@ -56,15 +54,21 @@ class List extends Component {
   }
 
   renderProduct(product) {
+    console.log(product)
     return (
-      <li key={product.id} className="list-group-item row clickable"
+      <li key={product.id} className="list-group-item clickable"
         onClick={() => this.viewProduct(product.id)}>
-        <listItem />
+        <ListItem product={product} />
+        {
+            this.state.redirect &&
+            <Redirect push to={this.state.redirect} />
+        }
       </li>
     )
   }
 
   viewProduct(id) {
+    console.log(id)
     this.setState({
       redirect:'/items/'+id
     })
